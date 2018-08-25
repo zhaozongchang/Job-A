@@ -6,11 +6,11 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
-    @job = Job.new(job_params)
+    @job = Job.new
   end
 
   def create
