@@ -11,11 +11,11 @@ class Admin::JobsController < ApplicationController
   end
 
   def new
-    @job = Job.find(params[:id])
+    @job = Job.new
   end
 
   def create
-    @job = Job.find(params[:id])
+    @job = Job.new(job_params)
     if @job.save
       redirect_to admin_jobs_path
     else

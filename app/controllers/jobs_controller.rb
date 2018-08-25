@@ -10,7 +10,7 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new(job_params)
+    @job = Job.new
   end
 
   def create
@@ -50,4 +50,4 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description)
   end
-end 
+end
